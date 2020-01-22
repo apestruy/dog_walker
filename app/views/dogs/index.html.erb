@@ -1,0 +1,15 @@
+
+
+<h1> Here are all the dogs who are looking for a walker: </h1>
+ <p> <ul> <% @dogs.each do |dog| %>
+ <li> <%= link_to dog.name, dog_path(dog.id) %> ->
+   Gender: <%= dog.gender %> &nbsp;
+   Age: <%= dog.age %> &nbsp;
+   Breed: <%= dog.breed %> &nbsp;
+   City: <%= dog.owner.city %> <p> 
+   <% end %>   
+   </li> </ul> </p>
+
+<%= link_to "All Owners", owners_path %> <br> 
+<%= link_to "Add New Dog", new_dog_path %> <br> 
+<%= link_to "Add New Owner", new_owner_path %> <br> 

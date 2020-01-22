@@ -1,0 +1,16 @@
+<h1> <%= @dog.name %>'s Profile Page</h1>
+
+<h3> <%= @dog.name%>'s Information </h3>
+<p>
+Breed: &nbsp; <%= @dog.breed %> <br>
+Gender: &nbsp; <%= @dog.gender %> <br>
+Age: &nbsp; <%= @dog.age %> 
+</p>
+<%= @dog.name %>'s Owner: &nbsp; <%= link_to @dog.owner.name, owner_path(@dog.owner.id)  %> <br>
+<%= @dog.name %>'s Address: &nbsp; <%= @dog.owner.address %>
+
+<%= button_to "Delete Dog", "/dogs/#{@dog.id}", method: "delete" %> <br>
+<%= link_to "Edit Dog", edit_dog_path(@dog) %> <br>
+<%= link_to "Add New Dog", new_dog_path %> <br> 
+<%= link_to "All Dogs", dogs_path %> <br> 
+<%= link_to "All Owners", owners_path %> <br> 

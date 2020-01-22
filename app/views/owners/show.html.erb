@@ -1,0 +1,21 @@
+<h1> <%= @owner.name %>'s Profile Page</h1>
+
+<%= @owner.name %> has the following dog(s):
+<p>
+<ul> <% @owner.dogs.each do |dog| %>
+<li> Dog's Name: <%= link_to dog.name, dog_path(dog.id) %> <br>
+Breed: <%= dog.breed %> <br>
+Gender: <%= dog.gender %> <br>
+Age: <%= dog.age %> <br>
+<%= button_to "Delete Dog", "/dogs/#{dog.id}", method: "delete" %> <br>
+ </p> <% end %>
+</li>
+</ul>
+
+<p> Address: <%= @owner.address %> </p>
+
+<%= button_to "Delete Owner", "/owners/#{@owner.id}", method: "delete" %> <br>
+<%= link_to "Edit Owner", edit_owner_path(@owner) %> <br>
+<%= link_to "Add New Dog", new_dog_path %> <br> 
+<%= link_to "All Owners", owners_path %> <br> 
+<%= link_to "All Dogs", dogs_path %> <br> 

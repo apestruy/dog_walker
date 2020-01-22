@@ -1,0 +1,16 @@
+<% if flash[:messages] %>
+<% flash[:messages].each do |message| %>
+<div> <%= message %> </div>
+<% end %>
+<% end %>
+
+<h1> Create New Owner: </h1>
+<%= form_for @owner do |f| %>
+Name: <%= f.text_field :name %> <br>
+City: <%= f.text_field :city %> <br>
+Address: <%= f.text_area :address %> <br>
+<%= f.submit %>
+<% end %>
+<br>
+<%= link_to "All Owners", owners_path %> <br> 
+<%= link_to "All Dogs", dogs_path %> <br> 

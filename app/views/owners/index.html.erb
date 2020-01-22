@@ -1,0 +1,16 @@
+
+
+<h1> All Owners: </h1>
+ <ul> <% @owners.each do |owner| %>
+ <li> <%= link_to owner.name, owner_path(owner.id) %> <br>
+      City: <%= owner.city %> <br>
+ Dogs: <br> <ol> <% owner.dogs.each do |dog| %>
+ <li> <%= link_to dog.breed, dog_path(dog.id) %> <br>
+    <% end %> </li> </ol>
+   <p> 
+   <% end %>   
+   </li> </ul>
+
+<%= link_to "All Dogs", dogs_path %> <br> 
+<%= link_to "Add New Owner", new_owner_path %> <br> 
+<%= link_to "Add New Dog", new_dog_path %> <br> 
