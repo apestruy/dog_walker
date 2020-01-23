@@ -9,13 +9,9 @@ class ReservationsController < ApplicationController
     @walkers = Walker.all 
   end
 
-  def show
-    @reservation = Reservation.find(params[:id])
-  end
-
   def create
     @reservation = Reservation.create!(reservation_params)
-    redirect_to reservation_path(@reservation)
+    redirect_to reservations_path
   end
 
   def edit
@@ -27,7 +23,7 @@ class ReservationsController < ApplicationController
   def update
     @reservation = Reservation.find(params[:id])
     @reservation.update(reservation_params)
-    redirect_to reservation_path(@reservation)
+    redirect_to reservations_path
   end
 
   def delete
