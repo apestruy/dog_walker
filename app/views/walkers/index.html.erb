@@ -1,2 +1,17 @@
-<h1>Walkers#index</h1>
-<p>Find me in app/views/walker/index.html.erb</p>
+<h1> All Walkers: </h1>
+ <ul> <% @walkers.each do |walker| %>
+ <li> <%= link_to walker.name, walker_path(walker.id) %> <br>
+      Age: <%= walker.age %> <br>
+      Rating: <%= walker.rating %> <br>
+ Reservations: <br> <ol> <% walker.reservations.each do |reservation| %>
+ <li> Dog: <%= link_to reservation.dog.name, dog_path(reservation.dog.id) %> <br>
+    <% end %> </li> </ol>
+   <p> 
+   <% end %>   
+   </li> </ul>
+
+<%= link_to "All Dogs", dogs_path %> <br> 
+<%= link_to "All Owners", owners_path %> <br> 
+<%= link_to "All Reservations", reservations_path %> <br>
+<%= link_to "Add New Owner", new_owner_path %> <br> 
+<%= link_to "Add New Dog", new_dog_path %> <br> 

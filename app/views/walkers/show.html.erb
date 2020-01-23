@@ -1,2 +1,16 @@
-<h1>Walkers#show</h1>
-<p>Find me in app/views/walker/show.html.erb</p>
+<h1> Walker: <%= @walker.name %>'s Profile Page</h1>
+
+Age: <%= @walker.age %> <br>
+Rating: <%= @walker.rating %> <br>
+<%= @walker.name %> has reservation(s) with the following dog(s):
+<br> <ol> <% @walker.reservations.each do |reservation| %>
+<li> Dog: <%= link_to reservation.dog.name, dog_path(reservation.dog.id) %> <br>
+    <% end %> </li> </ol>
+   <br> 
+
+
+<%= link_to "All Dogs", dogs_path %> <br> 
+<%= link_to "All Owners", owners_path %> <br> 
+<%= link_to "All Reservations", reservations_path %> <br>
+<%= link_to "Add New Owner", new_owner_path %> <br> 
+<%= link_to "Add New Dog", new_dog_path %> <br> 

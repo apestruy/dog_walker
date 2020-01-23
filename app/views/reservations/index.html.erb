@@ -1,2 +1,13 @@
-<h1>Reservations#index</h1>
-<p>Find me in app/views/reservations/index.html.erb</p>
+<h1> All Reservations: </h1>
+ <ul> <% @reservations.each do |reservation| %>
+ <li> Dog: <%= link_to reservation.dog.name, dog_path(reservation.dog) %> <br>
+    Walker: <%= link_to reservation.walker.name, walker_path(reservation.walker) %>
+   <p> 
+   <% end %>   
+   </li> </ul>
+
+<%= link_to "All Dogs", dogs_path %> <br> 
+<%= link_to "All Owners", owners_path %> <br> 
+<%= link_to "All Walkers", walkers_path %> <br> 
+<%= link_to "Add New Owner", new_owner_path %> <br> 
+<%= link_to "Add New Dog", new_dog_path %> <br> 
