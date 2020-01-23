@@ -30,7 +30,6 @@ Rails.application.routes.draw do
  #Reservation Routes
  get "/reservations", to: "reservations#index", as: "reservations"
  get "/reservations/new", to: "reservations#new", as: "new_reservation"
- get "/reservations/:id", to: "reservations#show", as: "reservation"
  post "/reservations", to: "reservations#create"
  get "/reservations/:id/edit", to: "reservations#edit", as: "edit_reservation" 
  patch "/reservations/:id", to: "reservations#update"
