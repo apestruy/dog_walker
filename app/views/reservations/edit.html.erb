@@ -1,2 +1,13 @@
-<h1>Reservations#edit</h1>
-<p>Find me in app/views/reservations/edit.html.erb</p>
+<h1> Edit Reservation: </h1>
+<%= form_for @reservation do |f| %>
+Dog: <%= f.collection_select :dog_id, @dogs, :id, :name %> <br>
+Walker: <%= f.collection_select :walker_id, @walkers, :id, :name %> <br>
+<%= f.submit :"Edit Reservation" %>
+<% end %> <br>
+
+<%= link_to "All Reservations", reservations_path %> <br>
+<%= link_to "All Walkers", walkers_path %> <br> 
+<%= link_to "All Dogs", dogs_path %> <br> 
+<%= link_to "All Owners", owners_path %> <br> 
+<%= link_to "Add New Owner", new_owner_path %> <br> 
+<%= link_to "Add New Dog", new_dog_path %> <br> 
